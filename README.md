@@ -22,7 +22,15 @@ pipx install git+https://github.com/DaelonSuzuka/godot-gdscript-toolkit.git
 
 KuhnChrisEU's [vscode-formatter-godot](https://marketplace.visualstudio.com/items?itemName=KuhnChrisEU.vscode-formatter-godot) plugin for VSCode works properly with this fork, giving you access to gdformat in the usual manner.
 
+The following python snippet will find every `*.gd` file in the current directory or any subdirectory and format it. This can be useful to format your entire project at once when installing these tools.
 
+```py
+from pathlib import Path
+import subprocess
+
+files = ' '.join([f.as_posix() for f in Path('.').rglob('*.gd')])
+subprocess.call(f"gdformat {files}", shell=True)
+```
 
 
 # GDScript Toolkit
