@@ -1,3 +1,30 @@
+# Daelon's Fork
+
+This is a great package, but I needed slightly more than zero comprimise on the formatting style.
+
+## Differences:
+
+- prefer ' instead of "
+- 1 line between sections instead of 2
+
+
+## Installation:
+
+To install this project you need `python3` and `pip`. 
+
+I strongly recommend using [pipx](https://github.com/pypa/pipx) to install python packages as system-level tools.
+
+```
+pipx install git+https://github.com/DaelonSuzuka/godot-gdscript-toolkit.git
+```
+
+## Additional Tools:
+
+KuhnChrisEU's [vscode-formatter-godot](https://marketplace.visualstudio.com/items?itemName=KuhnChrisEU.vscode-formatter-godot) plugin for VSCode works properly with this fork, giving you access to gdformat in the usual manner.
+
+
+
+
 # GDScript Toolkit
 [![](https://github.com/Scony/godot-gdscript-toolkit/workflows/Tests/badge.svg?branch=master)](https://github.com/Scony/godot-gdscript-toolkit/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
