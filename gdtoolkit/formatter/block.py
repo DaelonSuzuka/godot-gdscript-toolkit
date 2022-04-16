@@ -120,7 +120,7 @@ def _add_extra_blanks_due_to_previous_statement(
     forced_blanks_num = surrounding_empty_lines_table.get(previous_statement_name)
     if forced_blanks_num is None:
         return blank_lines
-    lines_to_prepend = forced_blanks_num
+    lines_to_prepend = min(forced_blanks_num, 1)
     lines_to_prepend -= 1 if len(blank_lines) > 0 and blank_lines[0][1] == "" else 0
     empty_line = [(None, "")]  # type: FormattedLines
     return lines_to_prepend * empty_line + blank_lines
@@ -143,7 +143,7 @@ def _add_extra_blanks_due_to_next_statement(
         and blank_lines[first_empty_line_ix_from_end - 1][1] == ""
         else 0
     )
-    lines_to_inject = forced_blanks_num
+    lines_to_inject = min(forced_blanks_num, 1)
     lines_to_inject -= empty_lines_already_in_place
     empty_line = [(None, "")]  # type: FormattedLines
     if first_empty_line_ix_from_end == -1:

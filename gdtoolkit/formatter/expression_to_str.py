@@ -200,7 +200,7 @@ def _regular_string_to_str(string: Token) -> str:
     actual_string_data = actual_string[1:-1]
     quotes_num = actual_string_data.count('"')
     aposes_num = actual_string_data.count("'")
-    target = '"' if quotes_num <= aposes_num else "'"
+    target = "'" if aposes_num <= quotes_num else '"'
     if target == '"' and actual_string.startswith("'"):
         actual_string_data = actual_string_data.replace("\\'", "'")
         actual_string_data = actual_string_data.replace('"', '\\"')
