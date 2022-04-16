@@ -68,17 +68,17 @@ def expression_to_str(expression: Node) -> str:
         # fake expressions:
         "func_arg_regular": lambda e: "{}{}".format(
             e.children[0].value,
-            " = {}".format(standalone_expression_to_str(e.children[1]))
+            "={}".format(standalone_expression_to_str(e.children[1]))
             if len(e.children) > 1
             else "",
         ),
-        "func_arg_inf": lambda e: "{} := {}".format(
+        "func_arg_inf": lambda e: "{}:={}".format(
             e.children[0].value, standalone_expression_to_str(e.children[1])
         ),
         "func_arg_typed": lambda e: "{}: {}{}".format(
             e.children[0].value,
             e.children[1].value,
-            " = {}".format(standalone_expression_to_str(e.children[2]))
+            "={}".format(standalone_expression_to_str(e.children[2]))
             if len(e.children) > 2
             else "",
         ),

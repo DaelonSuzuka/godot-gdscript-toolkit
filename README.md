@@ -6,6 +6,7 @@ This is a great package, but I needed slightly more than zero comprimise on the 
 
 - prefer ' instead of "
 - 1 line between sections instead of 2
+- adjusted whitespace inside function signatures
 
 
 ## Installation:
