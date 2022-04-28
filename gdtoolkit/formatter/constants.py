@@ -3,7 +3,7 @@ from types import MappingProxyType
 
 INDENT_STRING = "\t"
 INDENT_SIZE = 4
-INLINE_COMMENT_OFFSET = 2
+INLINE_COMMENT_OFFSET = 1
 
 DEFAULT_SURROUNDING_EMPTY_LINES_TABLE = MappingProxyType(
     {
