@@ -260,7 +260,7 @@ def _format_kv_pair_to_multiple_lines(
         return (key_lines + value_lines, concrete_expression.end_line)
     last_key_line_no, last_key_line = key_lines[-1]
     value_expression_context = ExpressionContext(
-        "{}=".format(last_key_line.strip()),  # to overcome godot bug #35416
+        "{} = ".format(last_key_line.strip()),  # to overcome godot bug #35416
         last_key_line_no,  # type: ignore
         expression_context.suffix_string,
     )
@@ -357,9 +357,9 @@ def _format_func_arg_to_multiple_lines(
             expression.children[1].line,
         )
     template = {
-        "func_arg_regular": "{}=",
-        "func_arg_inf": "{}:=",
-        "func_arg_typed": "{{}}:{} =".format(expression.children[1]),
+        "func_arg_regular": "{} = ",
+        "func_arg_inf": "{} := ",
+        "func_arg_typed": "{{}}: {} = ".format(expression.children[1]),
     }[expression.data]
     new_expression_context = ExpressionContext(
         template.format(expression.children[0].value),
